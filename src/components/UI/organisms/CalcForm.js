@@ -9,8 +9,12 @@ const initialState = {
 };
 
 const reducer = (state, action) => {
-  if (isNaN(action.payload)) return state;
-  action.payload = +action.payload;
+  // const validFormat = new RegExp(/^[0-9]*\.?[0-9]*$/);
+  // let userInput = action.payload;
+  // if (validFormat.test(userInput)) {
+  //   action.payload = +action.payload;
+  // } else return state;
+
   switch (action.type) {
     case 'SUM CHANGE':
       return {
@@ -70,9 +74,9 @@ const CalcForm = () => {
         >
           <Options
             data={[
-              { value: 0.21, text: '21%' },
-              { value: 0.09, text: '9%' },
-              { value: 0.05, text: '5%' },
+              { value: '0.21', text: '21%' },
+              { value: '0.09', text: '9%' },
+              { value: '0.05', text: '5%' },
             ]}
           />
         </select>
